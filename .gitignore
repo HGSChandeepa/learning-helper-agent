@@ -1,0 +1,12 @@
+.env
+*/.env
+# remove all .env files from all folders
+*.env
+**/.env
+**/*.env
+*.pyc
+__pycache__/
+
+.venv
+*.pyo
+*.pyd
