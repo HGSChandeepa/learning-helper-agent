@@ -6,6 +6,7 @@ from manager.sub_agents.diagramm_agent.agent import diagramm_agent
 from manager.sub_agents.lesson_images_gen_agent.agent import lesson_images_gen_agent
 from manager.sub_agents.question_and_answer_agent.agent import question_and_answer_agent
 from manager.sub_agents.video_gen_agent.agent import video_gen_agent
+from manager.sub_agents.coding_agent.agent import coding_agent
 
 
 #   root agent
@@ -34,5 +35,7 @@ root_agent = Agent(
         lesson_images_gen_agent,
         question_and_answer_agent,
         video_gen_agent,
+        coding_agent
+    
     ],
 )
