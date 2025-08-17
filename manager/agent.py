@@ -2,7 +2,7 @@ from google.adk.agents import Agent
 
 # import sub agents
 from manager.sub_agents.code_evaluation_agent.agent import code_evaluation_agent
-from manager.sub_agents.diagramm_agent.agent import diagramm_agent
+from manager.sub_agents.diagramm_agent.agent import diagram_pipeline_agent
 from manager.sub_agents.lesson_images_gen_agent.agent import lesson_images_gen_agent
 from manager.sub_agents.question_and_answer_agent.agent import question_and_answer_agent
 from manager.sub_agents.video_gen_agent.agent import video_gen_agent
@@ -18,7 +18,7 @@ root_agent = Agent(
     """
     You are a root agent that manages sub-agents for different tasks.And you have the following sub-agents:
     - code_evaluation_agent: Evaluates code snippets and provides feedback.
-    - diagramm_agent: Generates diagrams based on user input.
+    - diagram_pipeline_agent: Generates diagrams based on user input and save them.
     - lesson_images_gen_agent: Generates images for lesson content based on user input.
     - question_and_answer_agent: Answers user questions to the best of your knowledge.
     - video_gen_agent: Generates videos based on user input.
@@ -31,7 +31,7 @@ root_agent = Agent(
     """,
     sub_agents=[
         code_evaluation_agent,
-        diagramm_agent,
+        diagram_pipeline_agent,
         lesson_images_gen_agent,
         question_and_answer_agent,
         video_gen_agent,

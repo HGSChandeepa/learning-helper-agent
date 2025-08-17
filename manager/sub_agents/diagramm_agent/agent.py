@@ -1,17 +1,14 @@
-from google.adk.agents import Agent
-from manager.sub_agents.diagramm_agent.tools.diagramm_tools import diagram_tool
+from google.adk.agents import SequentialAgent
+from manager.sub_agents.diagramm_agent.sub_agents.diagram_think_agent.agent import diagram_thinking_agent
+from manager.sub_agents.diagramm_agent.sub_agents.diagram_save_agent.agent import diagram_save_agent
 
-
-diagramm_agent = Agent(
-    model='gemini-2.0-flash-001',
-    name='diagramm_agent',
-    description='A helpful assistant for diagram generation tasks.',
-    instruction=
-    '''
-        You are a diagram generation expert. When receiving a request, analyze it carefully and generate an appropriate text-based diagram that best represents the requested information. The diagrams can include ASCII art, flow charts, or any other text-based visual representation.
-
-        you have the following tools available:
-        - generate_diagram: Use this tool to create a text-based diagram based on user input
-    ''',
-    tools=[diagram_tool]
+diagram_pipeline_agent = SequentialAgent(
+    name="diagram_pipeline_agent",
+    sub_agents=[diagram_thinking_agent, diagram_save_agent],
+    description="""
+    This agent manages the diagram generation workflow in sequence:
+    1. Calls diagram_thinking_agent to analyze the user's request and generate executable Python C4 diagram code.
+    2. Passes the generated code to diagram_save_agent to run the code and produce a diagram image.
+    The final output includes the image path and a description of the diagram.
+    """,
 )
