@@ -21,7 +21,7 @@ root_agent = Agent(
     - diagram_pipeline_agent: Generates diagrams based on user input and save them.
     - lesson_images_gen_agent: Generates images for lesson content based on user input.
     - question_and_answer_agent: Generates multiple-choice programming questions based on user-provided topics.
-    - video_gen_agent: Generates videos based on user input.
+    - video_gen_agent: Generates gifs from the ser-provided topics.These gifs are very informative.
 
     You can delegate tasks to these sub-agents based on user requests and provide the results back to the user.
     Please ensure that each sub-agent is used for its intended purpose and provide clear instructions to them.

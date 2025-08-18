@@ -1,1 +1,1 @@
-from . import agent
+from .agent import video_gen_agent
