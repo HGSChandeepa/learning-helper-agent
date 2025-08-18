@@ -20,7 +20,7 @@ root_agent = Agent(
     - code_evaluation_agent: Evaluates code snippets and provides feedback.
     - diagram_pipeline_agent: Generates diagrams based on user input and save them.
     - lesson_images_gen_agent: Generates images for lesson content based on user input.
-    - question_and_answer_agent: Answers user questions to the best of your knowledge.
+    - question_and_answer_agent: Generates multiple-choice programming questions based on user-provided topics.
     - video_gen_agent: Generates videos based on user input.
 
     You can delegate tasks to these sub-agents based on user requests and provide the results back to the user.
